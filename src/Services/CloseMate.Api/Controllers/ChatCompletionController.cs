@@ -8,7 +8,7 @@ using UseCases.ChatCompletions.ViewModels;
 
 namespace CloseMate.Api.Controllers
 {
-    [Route("api/chat-completions")]
+    [Route("api/close-mate/chat-completions")]
     public class ChatCompletionController : ApiController
     {
         [HttpPost]

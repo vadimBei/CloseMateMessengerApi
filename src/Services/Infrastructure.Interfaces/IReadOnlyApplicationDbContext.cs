@@ -5,10 +5,9 @@ namespace Infrastructure.Interfaces
 {
     public interface IReadOnlyApplicationDbContext
     {
-        DbSet<ChatCompletion> ChatCompletions { get; set; }
+        DbSet<Chat> Chats { get; set; }
 
-        DbSet<ChatCompletionMessage> ChatCompletionMessages { get; set; }
+        DbSet<ChatMessage> ChatMessages { get; set; }
 
-        DbSet<ChatCompletionUsage> ChatCompletionUsages { get; set; }
     }
 }

@@ -6,11 +6,9 @@ namespace DataAccess.PostgreSQL
 {
     public class ReadOnlyApplicationDbContext : DbContext, IReadOnlyApplicationDbContext
     {
-        public DbSet<ChatCompletion> ChatCompletions { get; set; }
+        public DbSet<Chat> Chats { get; set; }
 
-        public DbSet<ChatCompletionMessage> ChatCompletionMessages { get; set; }
-
-        public DbSet<ChatCompletionUsage> ChatCompletionUsages { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
 
         public ReadOnlyApplicationDbContext(DbContextOptions options)
             : base(options)

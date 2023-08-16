@@ -7,11 +7,9 @@ namespace DataAccess.PostgreSQL
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        public DbSet<ChatCompletion> ChatCompletions { get; set; }
+        public DbSet<Chat> Chats { get; set; }
 
-        public DbSet<ChatCompletionMessage> ChatCompletionMessages { get; set; }
-
-        public DbSet<ChatCompletionUsage> ChatCompletionUsages { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

@@ -1,6 +1,6 @@
 ﻿NOTE: execute in Tools -> NuGet Package Manager -> Pakage Manager Console
 
-add-migration entity_description -p DataAccess.PostgreSQL -c ApplicationDbContext -o Infrastructure\Migrations
+add-migration entity_description -p DataAccess.PostgreSQL -c ApplicationDbContext -o Migrations
 
 remove-migration -p Trips.Core
 

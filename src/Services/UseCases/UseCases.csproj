@@ -19,4 +19,8 @@
 	  <ProjectReference Include="..\OpenAI.Interfaces\OpenAI.Interfaces.csproj" />
 	  <ProjectReference Include="..\WebClient.Implementations\WebClient.Implementations.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ChatMessages\Queries\" />
+	</ItemGroup>
 </Project>

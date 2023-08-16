@@ -29,7 +29,7 @@ namespace ApplicationServices.Implementation.Services
             }
 
             entity.Messages = entity.Messages
-                .OrderByDescending(x => x.Created)
+                .OrderBy(x => x.Created)
                 .ToList();
 
             return entity;

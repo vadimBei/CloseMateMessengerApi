@@ -69,7 +69,8 @@ namespace UseCases.ChatMessages.Commands.SendMessage
                     await _chatMessageService.CreateMessage(
                         new CreateMessageDto(
                             chatCompletion.Id,
-                            DateTimeOffset.FromUnixTimeSeconds(chatCompletion.Created).DateTime,
+                            DateTime.Now, //The date is manually generated while the service mocked.
+                                          //DateTimeOffset.FromUnixTimeSeconds(chatCompletion.Created).DateTime,
                             chatCompletionChoice.Message.Content,
                             ChatMessageRole.Assistant,
                             chat.Id)

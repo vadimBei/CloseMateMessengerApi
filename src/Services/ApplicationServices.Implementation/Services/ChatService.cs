@@ -40,7 +40,7 @@ namespace ApplicationServices.Implementation.Services
             var chat = await this.GetChatById(id, cancellationToken);
 
             var lastMessage = chat.Messages
-                .OrderBy(x => x.Created)
+                .OrderByDescending(x => x.Created)
                 .FirstOrDefault();
 
             return lastMessage;

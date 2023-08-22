@@ -1,6 +1,13 @@
-﻿namespace OpenAI.Interfaces.Dtos
+﻿using Newtonsoft.Json;
+
+namespace OpenAI.Interfaces.Dtos
 {
-    public record CompletionMessageDto(
-        string Role, 
-        string Content);
+    public class CompletionMessageDto
+    {
+        [JsonProperty(PropertyName = "role")]
+        public string Role { get; init; }
+
+        [JsonProperty(PropertyName = "content")]
+        public string Content { get; init; }
+    }
 }

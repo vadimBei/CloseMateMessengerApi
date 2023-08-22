@@ -49,15 +49,20 @@ namespace UseCases.ChatMessages.Commands.SendMessage
 
             foreach (var message in chatMessages)
             {
-                var completionMessage = new CompletionMessageDto(
-                        message.Role.ToString().ToLower(),
-                        message.Content);
+                var completionMessage = new CompletionMessageDto()
+                {
+                    Role = message.Role.ToString().ToLower(),
+                    Content = message.Content 
+                };
 
                 completionMessages.Add(completionMessage);
             }
 
             var chatCompletion = await _openAIService.CreateChatCompletion(
-                new CreateChatCompletionDto(completionMessages)
+                new CreateChatCompletionDto()
+                {
+                    Messages = completionMessages
+                }
                 , cancellationToken);
 
             if (chatCompletion.Choices.Any())

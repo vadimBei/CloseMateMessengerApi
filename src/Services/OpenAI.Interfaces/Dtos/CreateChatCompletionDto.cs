@@ -1,5 +1,7 @@
 ﻿namespace OpenAI.Interfaces.Dtos
 {
-    public record CreateChatCompletionDto( 
-        IEnumerable<CompletionMessageDto> Messages);
+    public class CreateChatCompletionDto
+    {
+        public IEnumerable<CompletionMessageDto> Messages { get; set; }
+    }
 }

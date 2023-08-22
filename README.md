@@ -163,8 +163,8 @@ To update the name of a chat, make a PUT request to the /api/close-mate/chats/{i
 
 
 ## Acknowledgments
-https://platform.openai.com/
-https://youtu.be/25i-Dh6U6Cw
+- https://platform.openai.com/
+- https://youtu.be/25i-Dh6U6Cw
 
 
 ## Contact

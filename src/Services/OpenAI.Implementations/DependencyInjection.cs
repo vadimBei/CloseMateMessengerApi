@@ -12,6 +12,7 @@ namespace OpenAI.Implementations
         public static IServiceCollection AddOpenAI(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<OpenAIOptions>(configuration.GetSection("OpenAIOptions"));
+
             services.AddWebClient(configuration);
 
             services.AddTransient<IOpenAIService, OpenAIService>();

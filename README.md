@@ -45,7 +45,7 @@ To create a chat, make a POST request to the /api/close-mate/chats endpoint.
 
 ```
 {
-  "message": "how to create record on C#?"
+  "name": "how to create record on C#?"
 }
 ```
 

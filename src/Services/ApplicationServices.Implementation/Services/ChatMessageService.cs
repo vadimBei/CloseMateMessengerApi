@@ -1,7 +1,7 @@
-﻿using ApplicationServices.Interfaces.Dtos;
-using ApplicationServices.Interfaces.Interfaces;
+﻿using ApplicationServices.Abstractions.Dtos;
+using ApplicationServices.Abstractions.Interfaces;
 using Entities.Models;
-using Infrastructure.Interfaces;
+using Infrastructure.Abstractions.Interfaces;
 
 namespace ApplicationServices.Implementation.Services
 {

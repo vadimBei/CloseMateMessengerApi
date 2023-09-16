@@ -1,8 +1,8 @@
-﻿using ApplicationServices.Interfaces.Interfaces;
+﻿using ApplicationServices.Abstractions.Interfaces;
+using Entities.Exceptions;
 using Entities.Models;
-using Infrastructure.Interfaces;
+using Infrastructure.Abstractions.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Utils.Exceptions;
 
 namespace ApplicationServices.Implementation.Services
 {
@@ -25,7 +25,7 @@ namespace ApplicationServices.Implementation.Services
 
             if (entity == null)
             {
-                throw new NotFoundException(typeof(Chat), id);
+                throw new EntityNotFoundException(typeof(Chat), id);
             }
 
             entity.Messages = entity.Messages

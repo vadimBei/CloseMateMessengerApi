@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebClient.Abstractions.Interfaces;
 using WebClient.Implementations.Options;
 using WebClient.Implementations.Services;
-using WebClient.Interfaces.Interfaces;
 
 namespace WebClient.Implementations
 {

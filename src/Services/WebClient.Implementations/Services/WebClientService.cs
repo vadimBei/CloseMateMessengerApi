@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using Utils.Exceptions;
+using System.Net;
+using WebClient.Abstractions.Interfaces;
+using WebClient.Abstractions.Options;
 using WebClient.Implementations.Enums;
+using WebClient.Implementations.Exceptions;
 using WebClient.Implementations.Options;
-using WebClient.Interfaces.Interfaces;
-using WebClient.Interfaces.Models;
 
 namespace WebClient.Implementations.Services
 {
@@ -43,12 +44,12 @@ namespace WebClient.Implementations.Services
             Configuration.WebResource = _webResourcesOptions.Resources.FirstOrDefault(c => c.Name == webResourcePathSplitted[0]);
 
             if (Configuration.WebResource == null)
-                throw new NotFoundException($"Resource {webResourcePathSplitted[0]} not found in resources collection");
+                throw new WebResourceException(HttpStatusCode.ServiceUnavailable, $"Resource {webResourcePathSplitted[0]} not found in resources collection");
 
             Configuration.Segment = Configuration.WebResource.Segments.FirstOrDefault(c => c.Name == webResourcePathSplitted[1]);
 
             if (Configuration.Segment == null)
-                throw new NotFoundException($"Segment {webResourcePathSplitted[1]} not found in resource {Configuration.WebResource.Name} segments collection");
+                throw new WebResourceException(HttpStatusCode.ServiceUnavailable, $"Segment {webResourcePathSplitted[1]} not found in resource {Configuration.WebResource.Name} segments collection");
 
             Configuration.RequestUri = Configuration.WebResource.Host + Configuration.Segment.Url;
         }

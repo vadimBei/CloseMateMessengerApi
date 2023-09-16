@@ -6,11 +6,11 @@ namespace UseCases.Chats.Commands.CreateChat
     {
         public CreateChatCommandValidator()
         {
-            RuleFor(x => x.Data.Message)
+            RuleFor(x => x.Data.Name)
                 .NotEmpty()
-                    .WithMessage("Message is required")
+                    .WithMessage("Name is required")
                 .NotNull()
-                    .WithMessage("Message is required");
+                    .WithMessage("Name is required");
         }
     }
 }

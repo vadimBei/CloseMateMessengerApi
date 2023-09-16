@@ -1,10 +1,10 @@
-﻿using ApplicationServices.Interfaces.Dtos;
-using ApplicationServices.Interfaces.Interfaces;
+﻿using ApplicationServices.Abstractions.Dtos;
+using ApplicationServices.Abstractions.Interfaces;
 using AutoMapper;
 using Entities.Enums;
 using MediatR;
-using OpenAI.Interfaces.Dtos;
-using OpenAI.Interfaces.Interfaces;
+using OpenAI.Abstractions.Dtos;
+using OpenAI.Abstractions.Interfaces;
 using UseCases.ChatMessages.ViewModels;
 
 namespace UseCases.ChatMessages.Commands.SendMessage
@@ -17,9 +17,9 @@ namespace UseCases.ChatMessages.Commands.SendMessage
         private readonly IChatMessageService _chatMessageService;
 
         public SendMessageCommandHandler(
-            IMapper mapper, 
-            IChatService chatService, 
-            IOpenAIService openAIService, 
+            IMapper mapper,
+            IChatService chatService,
+            IOpenAIService openAIService,
             IChatMessageService chatMessageService)
         {
             _mapper = mapper;
@@ -52,7 +52,7 @@ namespace UseCases.ChatMessages.Commands.SendMessage
                 var completionMessage = new CompletionMessageDto()
                 {
                     Role = message.Role.ToString().ToLower(),
-                    Content = message.Content 
+                    Content = message.Content
                 };
 
                 completionMessages.Add(completionMessage);
@@ -74,13 +74,12 @@ namespace UseCases.ChatMessages.Commands.SendMessage
                     await _chatMessageService.CreateMessage(
                         new CreateMessageDto(
                             chatCompletion.Id,
-                            DateTime.Now, //The date is manually generated while the service mocked.
-                                          //DateTimeOffset.FromUnixTimeSeconds(chatCompletion.Created).DateTime,
+                            DateTimeOffset.FromUnixTimeSeconds(chatCompletion.Created).DateTime,
                             chatCompletionChoice.Message.Content,
                             ChatMessageRole.Assistant,
                             chat.Id)
                         , cancellationToken);
-                }                
+                }
             }
 
             var lastChatMessage = await _chatService.GetLastChatMessage(chat.Id, cancellationToken);

@@ -6,13 +6,15 @@ using OpenAI.Implementations;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using UseCases;
-using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddUseCases(Assembly.GetExecutingAssembly(), builder.Configuration);
+
 builder.Services.AddOpenAI(builder.Configuration);
+
 builder.Services.AddApplicationServices(builder.Configuration);
+
 builder.Services.AddDataAccessPostgreSQL(builder.Configuration);
 
 builder.Services.AddControllers()

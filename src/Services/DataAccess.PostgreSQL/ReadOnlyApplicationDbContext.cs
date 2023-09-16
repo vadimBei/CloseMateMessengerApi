@@ -1,5 +1,5 @@
 ﻿using Entities.Models;
-using Infrastructure.Interfaces;
+using Infrastructure.Abstractions.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.PostgreSQL

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
-using WebClient.Interfaces.Interfaces;
+using WebClient.Abstractions.Interfaces;
 
 namespace WebClient.Implementations.Extensions
 {

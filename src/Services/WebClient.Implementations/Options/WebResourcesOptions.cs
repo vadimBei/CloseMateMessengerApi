@@ -1,4 +1,4 @@
-﻿using WebClient.Interfaces.Options;
+﻿using WebClient.Abstractions.Options;
 
 namespace WebClient.Implementations.Options
 {

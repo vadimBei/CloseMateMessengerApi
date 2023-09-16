@@ -1,7 +1,8 @@
-﻿using System.Net.Http.Headers;
-using Utils.Exceptions;
+﻿using System.Net;
+using System.Net.Http.Headers;
+using WebClient.Abstractions.Interfaces;
+using WebClient.Implementations.Exceptions;
 using WebClient.Implementations.Helpers;
-using WebClient.Interfaces.Interfaces;
 
 namespace WebClient.Implementations.Extensions
 {
@@ -13,7 +14,7 @@ namespace WebClient.Implementations.Extensions
         public static IWebClient WithBasicAuthentication(this IWebClient webClient)
         {
             if (webClient.Configuration.Segment == null)
-                throw new NotFoundException("WebResource segment not specified");
+                throw new WebResourceException(HttpStatusCode.NotFound, "WebResource segment not specified");
 
             if (webClient.Configuration.Segment.Login != null)
             {
@@ -58,7 +59,7 @@ namespace WebClient.Implementations.Extensions
             var token = webClient.Configuration.HttpContext?.Request.Headers["Authorization"].ToString();
 
             if (string.IsNullOrEmpty(token))
-                throw new NotFoundException("Bearer authorization token not found in request");
+                throw new AuthorizationException(HttpStatusCode.Unauthorized, "Bearer authorization token not found in request");
 
             token = token.Replace("Bearer", "");
 

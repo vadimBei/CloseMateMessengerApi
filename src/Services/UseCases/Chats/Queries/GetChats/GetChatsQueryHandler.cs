@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Infrastructure.Interfaces;
+using Infrastructure.Abstractions.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using UseCases.Chats.ViewModels;

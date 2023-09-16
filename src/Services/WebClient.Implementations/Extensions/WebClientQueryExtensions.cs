@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 using System.Web;
-using WebClient.Interfaces.Interfaces;
+using WebClient.Abstractions.Interfaces;
 
 namespace WebClient.Implementations.Extensions
 {

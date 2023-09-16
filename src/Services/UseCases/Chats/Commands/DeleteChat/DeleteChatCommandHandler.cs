@@ -1,8 +1,8 @@
-﻿using Entities.Models;
-using Infrastructure.Interfaces;
+﻿using Entities.Exceptions;
+using Entities.Models;
+using Infrastructure.Abstractions.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Utils.Exceptions;
 
 namespace UseCases.Chats.Commands.DeleteChat
 {
@@ -23,7 +23,7 @@ namespace UseCases.Chats.Commands.DeleteChat
 
             if (chatCompletion == null)
             {
-                throw new NotFoundException(typeof(Chat), request.Id);
+                throw new EntityNotFoundException(typeof(Chat), request.Id);
             }
 
             _applicationDbContext.Chats.Remove(chatCompletion);

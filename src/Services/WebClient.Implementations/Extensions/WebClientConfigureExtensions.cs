@@ -1,8 +1,9 @@
-﻿using Utils.Exceptions;
-using WebClient.Interfaces.Enums;
-using WebClient.Interfaces.Interfaces;
-using WebClient.Interfaces.Models;
-using WebClient.Interfaces.Options;
+﻿using System.Net;
+using Utils.Exceptions;
+using WebClient.Abstractions.Enums;
+using WebClient.Abstractions.Interfaces;
+using WebClient.Abstractions.Options;
+using WebClient.Implementations.Exceptions;
 
 namespace WebClient.Implementations.Extensions
 {
@@ -48,10 +49,10 @@ namespace WebClient.Implementations.Extensions
             var segment = webResource.Segments.FirstOrDefault();
 
             webClient.Configuration.WebResource = webResource ??
-                throw new NotFoundException($"Resource not found in resources collection");
+                throw new WebResourceException(HttpStatusCode.ServiceUnavailable, $"Resource not found in resources collection");
 
             webClient.Configuration.Segment = segment ??
-                throw new NotFoundException($"No segment in resource {webResource.Name} segments collection");
+                throw new WebResourceException(HttpStatusCode.ServiceUnavailable, $"No segment in resource {webResource.Name} segments collection");
 
             webClient.Configuration.RequestUri = webClient.Configuration.WebResource.Host + webClient.Configuration.Segment.Url;
 

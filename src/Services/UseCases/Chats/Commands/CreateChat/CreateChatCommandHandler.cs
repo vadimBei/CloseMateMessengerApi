@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Entities.Models;
-using Infrastructure.Interfaces;
+using Infrastructure.Abstractions.Interfaces;
 using MediatR;
 using System.Text;
 using UseCases.Chats.ViewModels;
@@ -22,7 +22,7 @@ namespace UseCases.Chats.Commands.CreateChat
 
         public async Task<ChatVM> Handle(CreateChatCommand request, CancellationToken cancellationToken)
         {
-            var chatName = this.GetChatName(request.Data.Message);
+            var chatName = this.GetChatName(request.Data.Name);
 
             var chat = new Chat()
             {

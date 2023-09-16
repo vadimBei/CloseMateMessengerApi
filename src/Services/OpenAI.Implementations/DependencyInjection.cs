@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OpenAI.Abstractions.Interfaces;
 using OpenAI.Implementations.Options;
 using OpenAI.Implementations.Services;
-using OpenAI.Interfaces.Interfaces;
 using WebClient.Implementations;
 
 namespace OpenAI.Implementations

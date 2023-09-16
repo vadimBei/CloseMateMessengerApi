@@ -1,4 +1,4 @@
-﻿using ApplicationServices.Interfaces.Interfaces;
+﻿using ApplicationServices.Abstractions.Interfaces;
 using AutoMapper;
 using MediatR;
 using UseCases.Chats.ViewModels;

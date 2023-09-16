@@ -1,5 +1,5 @@
-﻿using ApplicationServices.Implementation.Services;
-using ApplicationServices.Interfaces.Interfaces;
+﻿using ApplicationServices.Abstractions.Interfaces;
+using ApplicationServices.Implementation.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

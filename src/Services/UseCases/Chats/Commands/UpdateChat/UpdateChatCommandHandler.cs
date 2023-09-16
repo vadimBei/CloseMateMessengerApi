@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
+using Entities.Exceptions;
 using Entities.Models;
-using Infrastructure.Interfaces;
+using Infrastructure.Abstractions.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using UseCases.Chats.ViewModels;
-using Utils.Exceptions;
 
 namespace UseCases.Chats.Commands.UpdateChat
 {
@@ -28,7 +28,7 @@ namespace UseCases.Chats.Commands.UpdateChat
 
             if (chatCompletion == null)
             {
-                throw new NotFoundException(typeof(Chat), request.Data.Id);
+                throw new EntityNotFoundException(typeof(Chat), request.Data.Id);
             }
 
             chatCompletion.Name = request.Data.Name;

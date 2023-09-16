@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Utils\Utils.csproj" />
-		<ProjectReference Include="..\WebClient.Interfaces\WebClient.Interfaces.csproj" />
+		<ProjectReference Include="..\WebClient.Abstractions\WebClient.Abstractions.csproj" />
 	</ItemGroup>
 
 </Project>

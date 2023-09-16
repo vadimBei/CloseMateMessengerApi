@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
+using OpenAI.Abstractions.Dtos;
+using OpenAI.Abstractions.Interfaces;
 using OpenAI.Implementations.Options;
-using OpenAI.Interfaces.Dtos;
-using OpenAI.Interfaces.Interfaces;
+using WebClient.Abstractions.Interfaces;
 using WebClient.Implementations.Extensions;
-using WebClient.Interfaces.Interfaces;
 
 namespace OpenAI.Implementations.Services
 {

@@ -31,7 +31,7 @@ namespace WebClient.Implementations.Helpers
             switch (code)
             {
                 case HttpStatusCode.NotFound:
-                    var exceptionNotFound = JsonConvert.DeserializeObject<NotFoundException>(message);
+                    var exceptionNotFound = JsonConvert.DeserializeObject<WebClientNotFoundException>(message);
                     throw (exceptionNotFound.ErrorType == BaseErrorType.NotFoundError)
                         ? exceptionNotFound
                         : new WebClientException(code, message);

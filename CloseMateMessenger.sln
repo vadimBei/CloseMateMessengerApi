@@ -31,11 +31,13 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient.Abstractions", "src\Services\WebClient.Abstractions\WebClient.Abstractions.csproj", "{1BD53F40-EEDB-43B0-92BA-6D5BF23F8DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAI.Abstractions", "src\Services\OpenAI.Abstractions\OpenAI.Abstractions.csproj", "{AC4F8E95-C375-45C4-ABB3-0800C8059BE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAI.Abstractions", "src\Services\OpenAI.Abstractions\OpenAI.Abstractions.csproj", "{AC4F8E95-C375-45C4-ABB3-0800C8059BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Abstractions", "src\Services\Infrastructure.Abstractions\Infrastructure.Abstractions.csproj", "{ADC8A093-DD9F-44B0-AFB5-B2391E9A099B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Abstractions", "src\Services\Infrastructure.Abstractions\Infrastructure.Abstractions.csproj", "{ADC8A093-DD9F-44B0-AFB5-B2391E9A099B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices.Abstractions", "src\Services\ApplicationServices.Abstractions\ApplicationServices.Abstractions.csproj", "{34D87381-289E-4745-90D3-FEAF7F906763}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServices.Abstractions", "src\Services\ApplicationServices.Abstractions\ApplicationServices.Abstractions.csproj", "{34D87381-289E-4745-90D3-FEAF7F906763}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity.Abstractions", "src\Services\Entity.Abstractions\Entity.Abstractions.csproj", "{9C3EBA99-D242-4B0D-94A7-ED49E55DFA41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{34D87381-289E-4745-90D3-FEAF7F906763}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34D87381-289E-4745-90D3-FEAF7F906763}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34D87381-289E-4745-90D3-FEAF7F906763}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C3EBA99-D242-4B0D-94A7-ED49E55DFA41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3EBA99-D242-4B0D-94A7-ED49E55DFA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3EBA99-D242-4B0D-94A7-ED49E55DFA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3EBA99-D242-4B0D-94A7-ED49E55DFA41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +125,7 @@ Global
 		{AC4F8E95-C375-45C4-ABB3-0800C8059BE1} = {22FAC631-500E-4ED0-9D13-B2E627DF0C56}
 		{ADC8A093-DD9F-44B0-AFB5-B2391E9A099B} = {22FAC631-500E-4ED0-9D13-B2E627DF0C56}
 		{34D87381-289E-4745-90D3-FEAF7F906763} = {22FAC631-500E-4ED0-9D13-B2E627DF0C56}
+		{9C3EBA99-D242-4B0D-94A7-ED49E55DFA41} = {22FAC631-500E-4ED0-9D13-B2E627DF0C56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {298DE891-7234-47E0-A501-BBDE22D485F8}

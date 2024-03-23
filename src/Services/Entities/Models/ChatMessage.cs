@@ -1,8 +1,9 @@
 ﻿using Entities.Enums;
+using Entity.Abstractions.Interfaces;
 
 namespace Entities.Models
 {
-    public class ChatMessage
+    public class ChatMessage : ISoftDeletable
     {
         public long Id { get; set; }
 
@@ -16,5 +17,9 @@ namespace Entities.Models
 
         public long ChatId { get; set; }
         public Chat Chat { get; set; }
+
+        public bool IsDeleted { get; set; }
+       
+        public DateTime? DeletedAt { get; set; }
     }
 }
